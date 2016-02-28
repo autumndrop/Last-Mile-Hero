@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="not-ie" lang="en"> <!--<![endif]-->
+<head>
+	<!-- Basic Meta Tags -->
+  <meta charset="utf-8">
+  <title>CelebrateCities</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--[if (gte IE 9)|!(IE)]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <![endif]--> 
+
+  <!-- Favicon -->
+  <link href="img/favicon.png" rel="icon" type="image/png">
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link href="css/styles.css" rel="stylesheet" id="color-style"> 
+
+
+  <!-- Web Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+	<!-- Internet Explorer condition - HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->   
+
+    
+    
+    
+
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+<link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+
+<link href='css/inscope.css' type='text/css' rel='stylesheet' />
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+
+<style>
+
+.high-div {
+  height:250px;
+}
+.short-div {
+  height:25px;
+}
+
+.well {
+   background-color: rgba(245, 245, 245, 0.4);
+}
+.broader-left {
+  border-right: 3px dashed #3366CC;
+}
+.broader-bottom {
+  border-bottom: 3px dashed #3366CC;
+}
+</style>
+
+
+
+
+
+</head>     
+
+    
+<body>
+
+   
+  <!-- Content -->    
+  <div class="breadcrumb-container">
+    <div class="container">  
+      <div class="row">  
+        <div class="col-md-12">
+          <h1>LastMileHeros</h1>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Demo v1</a></li>
+          </ol>
+        </div>  
+      </div> 
+    </div> 
+  </div>
+  
+  <div class="container">
+ 
+      <div class="col-md-12 nopadding-lr">      
+            <div class="custom_height">      
+        
+
+            <!--Mapbox layer menu-->	
+            <nav id='menu-ui' class='menu-ui'></nav>
+            
+            <div id='map' style="margin:0px 0px 0px -15px;"></div>
+            
+            
+            <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+            
+            
+            <script src='js/jquery-1.11.3.min.js'></script>
+            <script src="js/uber.js"></script>
+            <!--order matters! -->
+
+           <script src='geojson/dc_bus_routes.js'></script>
+            <script src='geojson/dc_metro_routes.js'></script>
+           <!-- <script src='geojson/dc_bus_stops.js'></script>
+            <script src='geojson/dc_metro_stops.js'></script>-->
+            
+            
+            <script src='js/inscope.js'></script>
+            
+            </br>
+            
+        <div class="space20"></div>
+        <div class="divider"></div>
+        <div class="space40"></div>
+      </div> 
+</div>
+ 
+<div class="container" style="width:1140px;">
+
+    <h1Transit Options</h1>
+    <div class="row" >
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 broader-bottom" style="text-align:center;"><h2>Public Transportation</h2></div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 broader-bottom" style="text-align:center;"><h2>Uber</h2></div>
+
+    </div>
+    <div class="row" id="tblPrice">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><h4>Option</h4></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align:center;"><h4>Route Description</h4></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><h4>Time</h4></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="broader-left"><h4>Cost</h4></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style=""><h4>Method</h4></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style=""><h4>Time</h4></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style=""><h4>Cost</h4></div>
+    </div>    
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 broader-left">
+        <img src="img/publicall.png" style="width:635px;height:334px;">
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+   			<div id="show-data"></div>
+        </div>
+    </div>   
+</div>
+                
+      </div>  
+
+  </div>
+  
+  
+
+  </div>
+  
+  
+  
+  <!-- Content End -->
+           
+           
+           
+           
+           
+
+  
+  <a href="#" class="back-to-top"><span></span></a> 
+
+  <!-- JavaScripts -->
+  <script type="text/javascript" src="js/jquery-1.10.2.js"></script>                                                       
+  <script type="text/javascript" src="js/bootstrap.js"></script>  
+  <script type="text/javascript" src="js/jquery.easing.js"></script>  
+  <script type="text/javascript" src="js/jquery.sticky.js"></script>
+  <script type="text/javascript" src="js/tinynav.min.js"></script>      
+  <script type="text/javascript" src="js/animate.js"></script>
+  <script type="text/javascript" src="js/jquery.fitvids.js"></script> 
+  <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+  <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+  <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script> 
+  <script type="text/javascript" src="js/retina.js"></script> 
+  <script type="text/javascript" src="js/respond.min.js"></script> 
+  <script type="text/javascript" src="js/scale.fix.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.js"></script> 
+  <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" src="js/jquery.refineslide.js"></script>
+  <script type="text/javascript" src="layerslider/js/greensock.js"></script>
+  <script type="text/javascript" src="layerslider/js/layerslider.transitions.js"></script>
+  <script type="text/javascript" src="layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+  <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+  <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="masterslider/masterslider.js"></script>  
+  <script type="text/javascript" src="js/functions.js"></script> 
+       
+</body>
+</html>
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

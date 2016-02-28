@@ -169,11 +169,11 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
                     return
                 }
                 
-                self.label10.text = "\(Int(response!.expectedTravelTime/60+15)) min"
-                self.label6.text = "$\(Int((response!.expectedTravelTime/60+15)/2))"
+                self.label10.text = "\(Int(response!.expectedTravelTime/60+5)) min"
+                self.label6.text = "$\(Int((response!.expectedTravelTime/60+5)/2))"
                 
-                self.label12.text = "\(Int(response!.expectedTravelTime/60+15)+10) min"
-                self.label8.text = "$\(Int((response!.expectedTravelTime/60+15)/2/2))"
+                self.label12.text = "\(Int(response!.expectedTravelTime/60+5)+10) min"
+                self.label8.text = "$\(Int((response!.expectedTravelTime/60+5)/2/2))"
             }
             
             

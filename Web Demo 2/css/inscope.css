@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+ #map { position:absolute; top:0; bottom:0; width:100%; }
+  
+  
+html, body, #map{
+	height:100%;
+	width: 100%;
+	font-family: "PT Sans", Corbel, sans-serif;
+}
+
+.menu-ui {
+  background:#fff;
+  position:absolute;
+  top:5%;right:5%;
+  z-index:1;
+  border-radius:3px;
+  width:120px;
+  border:1px solid rgba(0,0,0,0.4);
+  }
+  .menu-ui a {
+    font-size:13px;
+    color:#404040;
+    display:block;
+    margin:0;padding:0;
+    padding:10px;
+    text-decoration:none;
+    border-bottom:1px solid rgba(0,0,0,0.25);
+    text-align:center;
+    }
+    .menu-ui a:first-child {
+      border-radius:3px 3px 0 0;
+      }
+    .menu-ui a:last-child {
+      border:none;
+      border-radius:0 0 3px 3px;
+      }
+    .menu-ui a:hover {
+      background:#f8f8f8;
+      color:#404040;
+      }
+    .menu-ui a.active {
+      background:#3887BE;
+      color:#FFF;
+      }
+      .menu-ui a.active:hover {
+        background:#3074a4;
+        }
+		
+		
+
+.geojson-menu-ui {
+  background:#fff;
+  position:relative;
+  top:5%;right:5%;
+  z-index:1;
+  border-radius:3px;
+  width:10%;
+  border:1px solid rgba(0,0,0,0.4);
+  }
+  .geojson-menu-ui a {
+    font-size:13px;
+    color:#404040;
+    display:block;
+    margin:0;padding:0;
+    padding:10px;
+    text-decoration:none;
+    border-bottom:1px solid rgba(0,0,0,0.25);
+    text-align:center;
+    }
+    .geojson-menu-ui a:first-child {
+      border-radius:3px 3px 0 0;
+      }
+    .geojson-menu-ui a:last-child {
+      border:none;
+      border-radius:0 0 3px 3px;
+      }
+    .geojson-menu-ui a:hover {
+      background:#f8f8f8;
+      color:#404040;
+      }
+    .geojson-menu-ui a.active {
+      background:#3887BE;
+      color:#FFF;
+      }
+      .geojson-menu-ui a.active:hover {
+        background:#3074a4;
+        }		
+		
+		
+		
+		
+  .custom_height{
+    width: 100%;
+	height:500px;
+  }
+  
+  
+  .insboxleft{
+	padding: 0px 0px 0px 20px; 
+	margin: 25px auto;
+  }
+  
+  .insbox{
+	padding: 0px;  
+	margin: 25px auto;
+  }
+  
+  .submitbutton{
+	padding: 0px 0px 0px 20px;  
+	height: 200px;
+  }
+  
